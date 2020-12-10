@@ -1,0 +1,11 @@
+
+.person {
+    display: flex;
+    border: 1px solid grey;
+    margin: 5px;
+    width: 40%;
+};
+
+.info {
+    display: block;
+};
