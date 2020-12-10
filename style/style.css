@@ -1,11 +1,38 @@
+body {
+    margin: 0 auto;
+    padding: 0px;
+}
 
-.person {
+.header {
+    background-color: rgb(36, 48, 48);
+    width: 100hw;
+    height: 100px;
+    margin-bottom: 20px;
+    color: white;
+    padding: 10px 0 0 50px;
+}
+
+.cards {
     display: flex;
-    border: 1px solid grey;
+    border: 1px solid lightgrey;
     margin: 5px;
-    width: 40%;
-};
+}
 
-.info {
-    display: block;
-};
+.button_wrapper {
+    text-align: center;
+}
+
+.loadButton {
+    background-color: lightseagreen;
+    color: white;
+    border-radius: 3px;
+    border: 0px;
+    margin-top: 20px;
+}
+
+.footer {
+    background-color: rgb(36, 48, 48);
+    width: 100hw;
+    height: 100px;
+    margin-top: 20px;
+}

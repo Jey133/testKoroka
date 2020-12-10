@@ -2,19 +2,35 @@ extends layout
 
 block content
   head
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1' crossorigin='anonymous')
     style
       include ../style/style.css
-    //- link(rel='stylesheet', href='style.css', type='text/css')
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
+    script.
+      function onButtonClick(){
+        $.ajax({
+          "url": "https://reqres.in/api/users?page=2",
+          success: function(data) {
+            console.log('success');
+            console.log(JSON.stringify(data));
+          }
+        }); 
+      }
   body
-    div.users
-      each person in data
-        div.person
-          div.person-image
-            img(src= person.avatar top center no-repeat;)
-          div.info
-            p #{person.first_name + " " + person.last_name} 
-            p #{person.email}
-
-
-
- 
+    .header
+      h1 Business cards
+      p Koroka Solutions candidate evaluation task
+    .container
+      .row
+        each person in data
+          .col-md-6
+            .cards
+              .row
+                .col-md-6
+                  img(src= person.avatar top center no-repeat;)
+                .col-md-6
+                  p #{person.first_name + " " + person.last_name} 
+                  p #{person.email}
+    .button_wrapper             
+      button.loadButton(type='button' onclick='onButtonClick()') Load more
+    .footer
